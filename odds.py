@@ -24,6 +24,7 @@ def extract_odds_line(
         if not isinstance(book, dict):
             continue
 
+        # If a preferred book is specified, filter on it
 
         if preferred_book and book.get("sportsBook") != preferred_book:
             continue
@@ -39,11 +40,15 @@ def extract_odds_line(
     return f"{label}: N/A"
 
 
+# Use same keys as NFL:
+#   totalOver        -> O/U
+#   homeTeamMLOdds   -> ML (for home)
 extract_ou_line = lambda odds, pb=None: extract_odds_line(odds, "totalOver", "O/U", pb)
 extract_ml_line = lambda odds, pb=None: extract_odds_line(odds, "homeTeamMLOdds", "ML", pb)
 
 
 def get_betting_odds(date: Optional[str] = None) -> list:
+    """Fetch NBA betting odds from the API."""
     from datetime import datetime
     from zoneinfo import ZoneInfo
 
@@ -60,6 +65,12 @@ def get_betting_odds(date: Optional[str] = None) -> list:
             logger.warning("Unexpected response format for betting odds")
             return []
 
+        # DEBUG ONCE if you want to confirm identical shape:
+        # from pprint import pprint
+        # if body:
+        #     print("DEBUG NBA odds sample:")
+        #     pprint(body[0])
+
         return body
     except Exception as e:
         logger.error(f"Error fetching betting odds: {e}")
@@ -67,6 +78,13 @@ def get_betting_odds(date: Optional[str] = None) -> list:
 
 
 def odds_by_game(date: Optional[str] = None) -> Dict[str, Dict[str, str]]:
+    """
+    Returns a dictionary of odds per gameID:
+        {
+            "gameID1": {"ML": "ML: -110", "O/U": "O/U: 235"},
+            "gameID2": {...}
+        }
+    """
 
     odds_list = get_betting_odds(date)
     result: Dict[str, Dict[str, str]] = {}

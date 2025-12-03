@@ -1,6 +1,7 @@
 import logging
 from logging.handlers import RotatingFileHandler
 
+LOG_FILE = "nfl_ticker.log"
 LOG_FILE = "nba_ticker.log"
 LOG_MAX_BYTES = 5 * 1024 * 1024 
 LOG_BACKUP_COUNT = 3  # Keep up to 3 rotated logs
@@ -30,5 +31,3 @@ def get_logger(name):
     # Add handlers
     logger.addHandler(file_handler)
     logger.addHandler(console_handler)
-
-    return logger
