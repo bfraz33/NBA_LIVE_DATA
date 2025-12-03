@@ -5,22 +5,15 @@ import json
 import time
 from datetime import datetime
 from zoneinfo import ZoneInfo
-
 from dotenv import load_dotenv
 from awscrt import io, mqtt, auth
 from awsiot import mqtt_connection_builder
-
-# 👇 This should be your NBA version of run_once()
-# If your function lives in a different module, just change this import.
 from main import run_once  
 
-# Load environment variables
 load_dotenv()
 
 ENDPOINT = os.getenv("ENDPOINT")
 REGION = os.getenv("REGION", "us-east-2")
-
-# Make these NBA-specific to keep things clean
 CLIENT_ID = os.getenv("NBA_CLIENT_ID", "nba-publisher-ec2")
 TOPIC = os.getenv("NBA_TOPIC", "nba/live/scores")
 
@@ -30,7 +23,7 @@ if not ENDPOINT:
     raise RuntimeError("ENDPOINT is not set in environment (.env).")
 
 
-# ---------- AWS CRT MQTT SETUP ---------- #
+#MQTT SETUP 
 
 event_loop_group = io.EventLoopGroup(1)
 host_resolver = io.DefaultHostResolver(event_loop_group)
@@ -53,11 +46,8 @@ last_data = None
 
 try:
     while True:
-        # run_once should return a dict, e.g.:
-        # {"timestamp": "...", "within_polling_hours": True/False, "scores": [...], "odds": [...]}
         new_data = run_once()
 
-        # Optional: honor within_polling_hours if your NBA main returns it
         within_hours = new_data.get("within_polling_hours", True)
 
         if not within_hours:
