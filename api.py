@@ -3,7 +3,6 @@ import time
 from datetime import datetime, timedelta
 import requests
 import os
-import csv
 from dotenv import load_dotenv
 
 load_dotenv()
