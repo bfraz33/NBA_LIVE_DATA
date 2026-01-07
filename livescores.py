@@ -1,14 +1,15 @@
+# Importing depenendies
 import time
 import logging
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 from typing import Optional, Dict, Any, List
-
 from api import get
 from dotenv import load_dotenv
 from paneldisplay import render_game_to_image
 from odds import odds_by_game
 
+# Loading envirornmental variables
 load_dotenv()
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")

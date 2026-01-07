@@ -80,3 +80,5 @@ def render_game_to_image(game):
 
     image.show()
     return image
+
+
