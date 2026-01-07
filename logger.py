@@ -1,10 +1,10 @@
 import logging
 from logging.handlers import RotatingFileHandler
 
-LOG_FILE = "nfl_ticker.log"
-LOG_FILE = "nba_ticker.log"
+#Logging configuration
+LOG_FILE = "NBA_ticker.log"
 LOG_MAX_BYTES = 5 * 1024 * 1024 
-LOG_BACKUP_COUNT = 3  # Keep up to 3 rotated logs
+LOG_BACKUP_COUNT = 5 # Rotating the last 10 recent logs renames a new log after 5 MB
 
 def get_logger(name):
     logger = logging.getLogger(name)
@@ -18,13 +18,13 @@ def get_logger(name):
         "%(asctime)s | %(levelname)s | %(name)s | %(message)s"
     )
 
-    # File handler (with rotation)
+    # Writing to NBA ticker log and rotating
     file_handler = RotatingFileHandler(
         LOG_FILE, maxBytes=LOG_MAX_BYTES, backupCount=LOG_BACKUP_COUNT
     )
     file_handler.setFormatter(formatter)
 
-    # Console handler (for live viewing)
+    # live log viewing
     console_handler = logging.StreamHandler()
     console_handler.setFormatter(formatter)
 
