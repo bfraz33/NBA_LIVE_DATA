@@ -1,4 +1,4 @@
-# Importing depenendies
+# Importing
 import time
 import logging
 from datetime import datetime, timedelta

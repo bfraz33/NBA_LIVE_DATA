@@ -27,7 +27,7 @@ def get(endpoint, params, retries=3, backoff=2):
         "X-RapidAPI-Key": os.environ.get("NBA_API_KEY"),
         "X-RapidAPI-Host": "tank01-fantasy-stats.p.rapidapi.com"
     }
-   #Data pull with rate limtit handling
+#Data pull with rate limtit handling
     for attempt in range(retries):
         response = requests.get(url, headers=headers, params=params)
         if response.status_code == 429:

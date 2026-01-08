@@ -1,4 +1,3 @@
-# nba_publisher.py
 
 import os
 import json

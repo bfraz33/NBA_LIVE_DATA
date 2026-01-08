@@ -1,3 +1,4 @@
+#Importing
 import logging
 from logging.handlers import RotatingFileHandler
 
@@ -31,3 +32,5 @@ def get_logger(name):
     # Add handlers
     logger.addHandler(file_handler)
     logger.addHandler(console_handler)
+
+    return logger
