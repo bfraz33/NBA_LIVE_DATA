@@ -5,6 +5,7 @@ import requests
 import os
 from dotenv import load_dotenv
 
+#Loading envirornmental variables
 load_dotenv()
 
 LAST_CALL = 0

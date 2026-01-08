@@ -1,4 +1,4 @@
-
+#Importing
 import os
 import json
 import time
@@ -9,21 +9,22 @@ from awscrt import io, mqtt, auth
 from awsiot import mqtt_connection_builder
 from main import run_once  
 
+#Loading envirornmental variables
 load_dotenv()
 
+#AWS credentials
 ENDPOINT = os.getenv("ENDPOINT")
 REGION = os.getenv("REGION", "us-east-2")
 CLIENT_ID = os.getenv("NBA_CLIENT_ID", "nba-publisher-ec2")
 TOPIC = os.getenv("NBA_TOPIC", "nba/live/scores")
 
-POLL_INTERVAL = 180  # 3 minutes, same as NFL
+POLL_INTERVAL = 180  # 3 minutes
 
 if not ENDPOINT:
     raise RuntimeError("ENDPOINT is not set in environment (.env).")
 
 
 #MQTT SETUP 
-
 event_loop_group = io.EventLoopGroup(1)
 host_resolver = io.DefaultHostResolver(event_loop_group)
 client_bootstrap = io.ClientBootstrap(event_loop_group, host_resolver)
@@ -37,12 +38,14 @@ mqtt_connection = mqtt_connection_builder.websockets_with_default_aws_signing(
     keep_alive_secs=30,
 )
 
+#Basic printing for my own visual satisfaction
 print(f"Connecting to {ENDPOINT} with client ID {CLIENT_ID}...")
 mqtt_connection.connect().result()
 print("✅ Connected to AWS IoT (NBA publisher)!")
 
 last_data = None
 
+#Publishing to messaging
 try:
     while True:
         new_data = run_once()
