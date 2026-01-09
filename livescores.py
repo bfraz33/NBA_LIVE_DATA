@@ -76,7 +76,7 @@ def get_game_venue(game_id: str) -> dict:
     """
     fallback = {
 
-        "arena": "",
+        "arena": "Available at game time",
         "gameTime": "",
         "gameTime_epoch": None, #Need to add date
     }
@@ -93,7 +93,7 @@ def get_game_venue(game_id: str) -> dict:
         return fallback
 
     # Map arena -> arena for downstream compatibility
-    arena = body.get("arena", " ")
+    arena = body.get("arena", "Available at game time")
     arena = body.get("arena", arena)  # if Tank01 ever adds 'arena', prefer it
     game_time = body.get("gameTime", "")
     game_time_epoch = body.get("gameTime_epoch")
@@ -320,7 +320,7 @@ def process_scores(return_games: bool = False) -> Optional[List[Dict[str, Any]]]
             
             #Arena & Time
             venue_info = get_game_venue(game_id)
-            arena = venue_info.get("arena", " ")
+            arena = venue_info.get("arena", "Available at game time")
             scheduled_time = format_tipoff_ct(game_info, venue_info)
 
             #Records
