@@ -8,6 +8,7 @@ from api import get
 from dotenv import load_dotenv
 from paneldisplay import render_game_to_image
 from odds import odds_by_game
+from database import upsert_game_state
 
 #Loading envirornmental variables
 load_dotenv()
@@ -351,9 +352,12 @@ def process_scores(return_games: bool = False) -> Optional[List[Dict[str, Any]]]
 
             games_payload.append(game_data)
 
-            # Local display / debugging
+            #Local display / debugging
             render_game_to_image(game_data)
             print_game_status(game_data)
+
+            #Loading into database
+            upsert_game_state(game_data)
 
         except Exception as e:
             logger.error(f"Error processing game {game_id}: {e}", exc_info=True)
