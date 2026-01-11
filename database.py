@@ -42,7 +42,6 @@ def upsert_game_state(game_data: dict):
       ou_string      = EXCLUDED.ou_string,
       ml_string      = EXCLUDED.ml_string,
       scheduled_time = EXCLUDED.scheduled_time,
-      clock          = EXCLUDED.clock,
       away_record    = EXCLUDED.away_record,
       home_record    = EXCLUDED.home_record,
       updated_at     = NOW();
@@ -61,13 +60,41 @@ def upsert_game_state(game_data: dict):
         game_data["ml_string"],
         game_data["scheduled_time"],
         game_data["away_record"],
-        game_data["home_record"],
+        game_data["home_record"]
     )
-    #Opening/closing connection to DB
+    
     conn = get_conn()
     try:
         with conn.cursor() as cur:
-            cur.execute(sql, vals) 
-        conn.commit()                 
+            cur.execute(sql, vals)   
+        conn.commit()    
+    finally:
+        conn.close()
+
+
+def fetch_game_cache(date_str: str):
+    sql =  """
+    SELECT game_id, away_score, home_score, display_status, ou_string, ml_string, arena
+    FROM nba
+    WHERE game_date = to_date(%s, 'YYYYMMDD');
+    """
+    conn = get_conn()
+    try:
+        # optional debug
+        print("CONNECTED TO PORT:", os.getenv("DB_PORT"))
+
+        with conn.cursor() as cur:
+            cur.execute(sql, (date_str,))
+            rows = cur.fetchall()
+
+        return [
+            {
+                "game_id": r[0],
+                "away_score": r[1],
+                "home_score": r[2],
+                "display_status": r[3],
+            }
+            for r in rows
+        ]
     finally:
         conn.close()

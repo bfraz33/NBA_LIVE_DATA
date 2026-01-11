@@ -8,10 +8,12 @@ from api import get
 from dotenv import load_dotenv
 from paneldisplay import render_game_to_image
 from odds import odds_by_game
-from database import upsert_game_state
+from database import upsert_game_state, fetch_game_cache
+
 
 #Loading envirornmental variables
 load_dotenv()
+Cache_loaded_from_db = False
 
 #Logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -255,14 +257,46 @@ def find_next_game_date(start_date: datetime, max_days: int = 7):
             return date_str, games
     return None, None
 
+def caches_from_db(date_str:str):
+    global Cache_loaded_from_db
+
+    if caches_from_db:
+        return
+    try:
+        rows = fetch_game_cache(date_str)
+        loaded = 0
+        #logger.info(f"DB fetch returned {len(rows)} rows for {date_str}")
+        #if rows:
+            #logger.info(f"Sample row: {rows[0]}")  #Need to figure this out ????
+
+        for r in rows:
+            gid = r[game_id]
+            a = r[away_score]
+            h = r[home_score]
+            #s = r[display_status] -> testing something
+            if a is not NONE and h is not None:
+                LAST_SCORE_CACHE[gid] = int(a), int(h)
+
+            s = r["display_status"]
+            if s:
+                LAST_STATUS_CACHE[gid] = s
+
+            loaded += 1
+
+        logger.info(f"Cache init from DB: loaded {loaded} games for {date_str}")
+    except Exception as e:
+        logger.warning(f"Cache init from DB failed: {e}")
+
+    CACHE_LOADED_FROM_DB = True
+
 #Engine
 def process_scores(return_games: bool = False) -> Optional[List[Dict[str, Any]]]:
-    
+
     #Getting date
-    today = datetime.now(ZoneInfo("America/Chicago"))
     today = datetime.now(CENTRAL_TZ)
     date_str = today.strftime("%Y%m%d")
     games = get_live_scores(date_str)
+    caches_from_db(date_str)
 
     if not games:
         logger.info("No games today. Searching next 7 days…")
@@ -301,7 +335,7 @@ def process_scores(return_games: bool = False) -> Optional[List[Dict[str, Any]]]
                 or ""
             )
 
-            # Try a bunch of possible quarter/period fields
+            #Try a bunch of possible quarter/period fields
             period = (
                 game_info.get("currentPeriod")
                 or game_info.get("quarter")
@@ -352,13 +386,13 @@ def process_scores(return_games: bool = False) -> Optional[List[Dict[str, Any]]]
 
             games_payload.append(game_data)
 
-            #Local display / debugging
-            render_game_to_image(game_data)
-            print_game_status(game_data)
-
             #Loading into database
             upsert_game_state(game_data)
 
+            #Local display / debugging
+            render_game_to_image(game_data)
+            print_game_status(game_data)
+    
         except Exception as e:
             logger.error(f"Error processing game {game_id}: {e}", exc_info=True)
 
