@@ -1,12 +1,12 @@
 #Importing
 import time
-import logging
+from logger import get_logger
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 from typing import Optional, Dict, Any, List
 from api import get
 from dotenv import load_dotenv
-from paneldisplay import render_game_to_image
+#from paneldisplay import render_game_to_image
 from odds import odds_by_game
 from database import upsert_game_state, fetch_game_cache
 
@@ -16,8 +16,7 @@ load_dotenv()
 Cache_loaded_from_db = False
 
 #Logging
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 #Caching last status with central timezone time stamp
 CENTRAL_TZ = ZoneInfo("America/Chicago")
@@ -89,6 +88,7 @@ def get_game_venue(game_id: str) -> dict:
     except Exception as e:
         logger.error(f"Error fetching getNBABoxScore for {game_id}: {e}")
         return fallback
+    
 
     body = resp.get("body")
     if not isinstance(body, dict):
@@ -106,6 +106,8 @@ def get_game_venue(game_id: str) -> dict:
         "arena": arena,
         "gameTime": game_time,
         "gameTime_epoch": game_time_epoch,
+
+    
     }
 
 
@@ -390,7 +392,7 @@ def process_scores(return_games: bool = False) -> Optional[List[Dict[str, Any]]]
             upsert_game_state(game_data)
 
             #Local display / debugging
-            render_game_to_image(game_data)
+            #render_game_to_image(game_data)
             print_game_status(game_data)
     
         except Exception as e:
