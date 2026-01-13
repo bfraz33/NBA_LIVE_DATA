@@ -71,25 +71,27 @@ NBA_LIVE_DATA/
 
 ```bash
 python -m venv env
+
 # Windows
 env\Scripts\activate
+
 # macOS/Linux
 source env/bin/activate
+```
 
-2) Install dependencies
+### 2) Install dependencies
+```
 pip install -r requirements.txt
+```
 
-
-3) Configure environment variables
-
-3) Configure environment variables
-
+### 3) Configure environment variables
+```
 Create a .env file (start from .env.example):
 
 cp .env.example .env
-
-Example .env.example:
-
+```
+## Example .env.example
+```
 # --- API ---
 RAPIDAPI_KEY=YOUR_KEY_HERE
 RAPIDAPI_HOST=YOUR_HOST_HERE
@@ -113,22 +115,24 @@ DB_PORT=5432
 DB_NAME=FrontOffice
 DB_USER=postgres
 DB_PASSWORD=postgres
+```
 
-Run (v1)
+### Run (v1)
 
-Poll live scores
-
+## Poll live scores
+```
 python livescores.py
+```
+#### Typical behavior
 
-Typical behavior:
-	•	Sleeps between calls to respect rate limits
-	•	Logs game status updates
-	•	Only updates downstream when values change (if your v1 code supports diffing)
+- Sleeps between calls to respect rate limits
 
-Output payload (example)
+- Logs game status updates
 
-A typical normalized score/status message:
+- Only updates downstream when values change
 
+### Example output payload
+ ```
 {
   "game_id": "20251203_LAC@ATL",
   "home_team": "ATL",
@@ -139,50 +143,4 @@ A typical normalized score/status message:
   "is_live": true,
   "last_updated_epoch": 1733299200
 }
-
-Logging
-
-v1 uses structured logging to make debugging API + parsing issues easy:
-	•	API failures are logged with the endpoint + gameID (when relevant)
-	•	Unexpected response shapes fall back to safe defaults
-	•	“Last known good” caches help avoid blank/None crashes during live games
-
-If you split logging into logger.py, keep:
-	•	console logs for dev
-	•	optional rotating file logs for long-running EC2 instances
-
-⸻
-
-Rate limiting / throttling
-
-This project is designed to be safe with strict API limits.
-	•	A throttle is called before each API request
-	•	Poll interval defaults to ~3 minutes
-	•	Only fetch “deep” endpoints (boxscore/odds) when needed
-
-⸻
-
-Roadmap
-
-v1 (this repo)
-	•	stable polling + caching
-	•	normalized score/status output
-	•	optional odds integration
-
-v2
-	•	break into Go/Python microservices (scores, odds, venues, status)
-	•	message broker (MQTT → Kafka optional)
-	•	REST/GraphQL read APIs
-	•	device registry + provisioning for plug-and-play tickers
-
-
-License
-
-MIT (or update as desired)
-
-⸻
-
-Author
-
-Brandon Frazier
-NBA LIVE DATA — powering real-time LED ticker displays
+```
