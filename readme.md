@@ -144,3 +144,23 @@ python livescores.py
   "last_updated_epoch": 1733299200
 }
 ```
+### Expected DB output
+
+![Screenshot 2026-01-11 200514](https://github.com/user-attachments/assets/feb016af-64f2-4af2-b61e-16541184314d)
+
+
+### Expected Virtual Display Output
+
+
+<img width="256" height="48" alt="tmpdsmpc_9m" src="https://github.com/user-attachments/assets/9ec43ba0-d76a-4d50-8f68-01c47ca3dbcd" />
+
+
+<img width="256" height="48" alt="tmp_dht93c1" src="https://github.com/user-attachments/assets/22e7b51b-fe4c-4165-b35e-8d1ac1359a89" />
+
+
+<img width="256" height="48" alt="tmpkncii_mv" src="https://github.com/user-attachments/assets/21e654ad-343e-4d4c-985c-c9e3c01de3db" />
+
+
+
+
+
