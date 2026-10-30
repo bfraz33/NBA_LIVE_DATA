@@ -1,8 +1,14 @@
-env/
+# secrets - NEVER commit
+.env
+
+# python
 __pycache__/
 *.pyc
+env/
+.venv/
+
+# runtime output
 *.log
-.DS_Store
-.env
-logs/
-weekly api call logs/
+output/
+.vscode/
+venue_debug.txt
