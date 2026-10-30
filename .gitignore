@@ -12,3 +12,9 @@ env/
 output/
 .vscode/
 venue_debug.txt
+
+# Runtime-generated files
+nba_ticker.log
+output/frames/
+output/preview.png
+output/preview-sheet.png
