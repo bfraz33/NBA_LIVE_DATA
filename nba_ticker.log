@@ -155,3 +155,19 @@ NBA Games for 20260111:
 
 2026-01-11 19:31:37,216 | INFO | __main__ | Waiting 3 minutes before next poll...
 
+15:51:37 INFO    nba_ticker.service: Polling every 180s. Ctrl+C to stop.
+15:51:37 INFO    nba_ticker.scoreboard: Requesting NBA scoreboard for 20261030
+15:51:39 ERROR   nba_ticker.client: Error fetching getNBAScoresOnly: 403 Client Error: Forbidden for url: https://tank01-fantasy-stats.p.rapidapi.com/getNBAScoresOnly?gameDate=20261030&topPerformers=false
+15:51:39 INFO    nba_ticker.scoreboard: Tank01 returned 0 raw games for 20261030
+15:51:39 INFO    nba_ticker.scoreboard: Today's NBA scoreboard contains 0 games (20261030)
+15:51:39 WARNING nba_ticker.scoreboard: No NBA games returned for today's date: 20261030
+15:51:39 INFO    nba_ticker.sinks.preview: Preview updated: C:\NBA_LIVE_DATA\output\preview.png (1 games available)
+15:51:53 INFO    nba_ticker.sinks.preview: Preview sink closed.
+15:51:58 INFO    nba_ticker.service: Polling every 180s. Ctrl+C to stop.
+15:51:58 INFO    nba_ticker.scoreboard: Requesting NBA scoreboard for 20261030
+15:51:59 ERROR   nba_ticker.client: Error fetching getNBAScoresOnly: 403 Client Error: Forbidden for url: https://tank01-fantasy-stats.p.rapidapi.com/getNBAScoresOnly?gameDate=20261030&topPerformers=false
+15:51:59 INFO    nba_ticker.scoreboard: Tank01 returned 0 raw games for 20261030
+15:51:59 INFO    nba_ticker.scoreboard: Today's NBA scoreboard contains 0 games (20261030)
+15:51:59 WARNING nba_ticker.scoreboard: No NBA games returned for today's date: 20261030
+15:51:59 INFO    nba_ticker.sinks.preview: Preview updated: C:\NBA_LIVE_DATA\output\preview.png (1 games available)
+15:52:04 INFO    nba_ticker.sinks.preview: Preview sink closed.

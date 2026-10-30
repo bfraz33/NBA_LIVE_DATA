@@ -1,3 +1,0 @@
-# Only install what you enable
-psycopg2-binary>=2.9     # DB_ENABLED / --db
-awsiotsdk>=1.20          # AWS_ENABLED / --aws
