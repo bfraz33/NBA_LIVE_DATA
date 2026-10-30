@@ -171,3 +171,123 @@ NBA Games for 20260111:
 15:51:59 WARNING nba_ticker.scoreboard: No NBA games returned for today's date: 20261030
 15:51:59 INFO    nba_ticker.sinks.preview: Preview updated: C:\NBA_LIVE_DATA\output\preview.png (1 games available)
 15:52:04 INFO    nba_ticker.sinks.preview: Preview sink closed.
+16:39:41 INFO    nba_ticker.service: Polling every 180s. Ctrl+C to stop.
+16:39:41 INFO    nba_ticker.scoreboard: Requesting NBA scoreboard for 20261030
+16:39:43 ERROR   nba_ticker.client: Error fetching getNBAScoresOnly: 403 Client Error: Forbidden for url: https://tank01-fantasy-stats.p.rapidapi.com/getNBAScoresOnly?gameDate=20261030&topPerformers=false
+16:39:43 INFO    nba_ticker.scoreboard: Tank01 returned 0 raw games for 20261030
+16:39:43 INFO    nba_ticker.scoreboard: Today's NBA scoreboard contains 0 games (20261030)
+16:39:43 WARNING nba_ticker.scoreboard: No NBA games returned for today's date: 20261030
+16:39:43 INFO    nba_ticker.sinks.preview: Preview updated: C:\NBA_LIVE_DATA\output\preview.png (1 games available)
+16:39:49 INFO    nba_ticker.sinks.preview: Preview sink closed.
+16:43:19 INFO    nba_ticker.scoreboard: Requesting NBA scoreboard for 20261030
+16:43:20 ERROR   nba_ticker.client: Error fetching getNBAScoresOnly: 403 Client Error: Forbidden for url: https://tank01-fantasy-stats.p.rapidapi.com/getNBAScoresOnly?gameDate=20261030&topPerformers=false
+16:43:20 INFO    nba_ticker.scoreboard: Tank01 returned 0 raw games for 20261030
+16:43:20 INFO    nba_ticker.scoreboard: Today's NBA scoreboard contains 0 games (20261030)
+16:43:20 WARNING nba_ticker.scoreboard: No NBA games returned for today's date: 20261030
+16:43:20 INFO    nba_ticker.sinks.preview: Preview updated: C:\NBA_LIVE_DATA\output\preview.png (1 games available)
+16:43:20 INFO    nba_ticker.sinks.preview: Preview sink closed.
+16:48:35 INFO    nba_ticker.service: Polling every 180s. Ctrl+C to stop.
+16:48:35 INFO    nba_ticker.scoreboard: Requesting NBA scoreboard for 20261030
+16:48:36 ERROR   nba_ticker.client: Error fetching getNBAScoresOnly: 403 Client Error: Forbidden for url: https://tank01-fantasy-stats.p.rapidapi.com/getNBAScoresOnly?gameDate=20261030&topPerformers=false
+16:48:36 INFO    nba_ticker.scoreboard: Tank01 returned 0 raw games for 20261030
+16:48:36 INFO    nba_ticker.scoreboard: Today's NBA scoreboard contains 0 games (20261030)
+16:48:36 WARNING nba_ticker.scoreboard: No NBA games returned for today's date: 20261030
+16:48:36 INFO    nba_ticker.sinks.preview: Preview updated: C:\NBA_LIVE_DATA\output\preview.png (1 games available)
+16:51:36 INFO    nba_ticker.scoreboard: Requesting NBA scoreboard for 20261030
+16:51:36 ERROR   nba_ticker.client: Error fetching getNBAScoresOnly: 403 Client Error: Forbidden for url: https://tank01-fantasy-stats.p.rapidapi.com/getNBAScoresOnly?gameDate=20261030&topPerformers=false
+16:51:36 INFO    nba_ticker.scoreboard: Tank01 returned 0 raw games for 20261030
+16:51:36 INFO    nba_ticker.scoreboard: Today's NBA scoreboard contains 0 games (20261030)
+16:51:36 WARNING nba_ticker.scoreboard: No NBA games returned for today's date: 20261030
+16:51:36 INFO    nba_ticker.service: No change in data (0 games).
+16:52:50 INFO    nba_ticker: Stopping...
+16:52:50 INFO    nba_ticker.sinks.preview: Preview sink closed.
+16:52:52 INFO    nba_ticker.service: Polling every 180s. Ctrl+C to stop.
+16:52:52 INFO    nba_ticker.scoreboard: Requesting NBA scoreboard for 20261030
+16:52:52 INFO    nba_ticker.scoreboard: Tank01 returned 10 raw games for 20261030
+16:52:52 INFO    nba_ticker.scoreboard: Today's NBA scoreboard contains 10 games (20261030)
+16:52:52 INFO    nba_ticker.scoreboard: Processing 10 NBA games for 20261030
+16:53:01 INFO    nba_ticker.scoreboard: Game added: CHA @ WAS | Scheduled | 20261030_CHA@WAS
+16:53:04 INFO    nba_ticker.scoreboard: Game added: CHI @ BOS | Scheduled | 20261030_CHI@BOS
+16:53:07 INFO    nba_ticker.scoreboard: Game added: DEN @ PHO | Scheduled | 20261030_DEN@PHO
+16:53:10 INFO    nba_ticker.scoreboard: Game added: DET @ BKN | Scheduled | 20261030_DET@BKN
+16:53:13 INFO    nba_ticker.scoreboard: Game added: HOU @ DAL | Scheduled | 20261030_HOU@DAL
+16:53:16 INFO    nba_ticker.scoreboard: Game added: IND @ MIA | Scheduled | 20261030_IND@MIA
+16:53:19 INFO    nba_ticker.scoreboard: Game added: LAC @ MIN | Scheduled | 20261030_LAC@MIN
+16:53:22 INFO    nba_ticker.scoreboard: Game added: LAL @ GS | Scheduled | 20261030_LAL@GS
+16:53:25 INFO    nba_ticker.scoreboard: Game added: NY @ PHI | Scheduled | 20261030_NY@PHI
+16:53:28 INFO    nba_ticker.scoreboard: Game added: ORL @ TOR | Scheduled | 20261030_ORL@TOR
+16:53:28 INFO    nba_ticker.scoreboard: Successfully processed 10 of 10 games returned by Tank01
+16:53:29 INFO    nba_ticker.sinks.preview: Preview updated: C:\NBA_LIVE_DATA\output\preview.png (10 games available)
+16:53:32 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_CHI@BOS (2/10)
+16:53:35 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_DET@BKN (3/10)
+16:53:38 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_NY@PHI (4/10)
+16:53:41 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_ORL@TOR (5/10)
+16:53:44 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_HOU@DAL (6/10)
+16:53:47 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_IND@MIA (7/10)
+16:53:50 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_LAC@MIN (8/10)
+16:53:53 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_DEN@PHO (9/10)
+16:53:56 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_LAL@GS (10/10)
+16:53:59 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_CHA@WAS (1/10)
+16:54:02 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_CHI@BOS (2/10)
+16:54:05 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_DET@BKN (3/10)
+16:54:06 INFO    nba_ticker.sinks.preview: Preview sink closed.
+16:54:30 INFO    nba_ticker.service: Polling every 180s. Ctrl+C to stop.
+16:54:30 INFO    nba_ticker.scoreboard: Requesting NBA scoreboard for 20261030
+16:54:31 INFO    nba_ticker.scoreboard: Tank01 returned 10 raw games for 20261030
+16:54:31 INFO    nba_ticker.scoreboard: Today's NBA scoreboard contains 10 games (20261030)
+16:54:31 INFO    nba_ticker.scoreboard: Processing 10 NBA games for 20261030
+16:54:40 INFO    nba_ticker.scoreboard: Game added: CHA @ WAS | Scheduled | 20261030_CHA@WAS
+16:54:43 INFO    nba_ticker.scoreboard: Game added: CHI @ BOS | Scheduled | 20261030_CHI@BOS
+16:54:46 INFO    nba_ticker.scoreboard: Game added: DEN @ PHO | Scheduled | 20261030_DEN@PHO
+16:54:49 INFO    nba_ticker.scoreboard: Game added: DET @ BKN | Scheduled | 20261030_DET@BKN
+16:54:52 INFO    nba_ticker.scoreboard: Game added: HOU @ DAL | Scheduled | 20261030_HOU@DAL
+16:54:55 INFO    nba_ticker.scoreboard: Game added: IND @ MIA | Scheduled | 20261030_IND@MIA
+16:54:58 INFO    nba_ticker.scoreboard: Game added: LAC @ MIN | Scheduled | 20261030_LAC@MIN
+16:55:01 INFO    nba_ticker.scoreboard: Game added: LAL @ GS | Scheduled | 20261030_LAL@GS
+16:55:04 INFO    nba_ticker.scoreboard: Game added: NY @ PHI | Scheduled | 20261030_NY@PHI
+16:55:07 INFO    nba_ticker.scoreboard: Game added: ORL @ TOR | Scheduled | 20261030_ORL@TOR
+16:55:07 INFO    nba_ticker.scoreboard: Successfully processed 10 of 10 games returned by Tank01
+16:55:07 INFO    nba_ticker.sinks.preview: Preview updated: C:\NBA_LIVE_DATA\output\preview.png (10 games available)
+16:55:10 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_CHI@BOS (2/10)
+16:55:13 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_DET@BKN (3/10)
+16:55:16 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_NY@PHI (4/10)
+16:55:19 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_ORL@TOR (5/10)
+16:55:22 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_HOU@DAL (6/10)
+16:55:25 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_IND@MIA (7/10)
+16:55:28 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_LAC@MIN (8/10)
+16:55:31 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_DEN@PHO (9/10)
+16:55:34 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_LAL@GS (10/10)
+16:55:37 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_CHA@WAS (1/10)
+16:55:40 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_CHI@BOS (2/10)
+16:55:43 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_DET@BKN (3/10)
+16:55:46 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_NY@PHI (4/10)
+16:55:49 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_ORL@TOR (5/10)
+16:55:52 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_HOU@DAL (6/10)
+16:55:55 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_IND@MIA (7/10)
+16:55:58 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_LAC@MIN (8/10)
+16:56:01 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_DEN@PHO (9/10)
+16:56:04 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_LAL@GS (10/10)
+16:56:07 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_CHA@WAS (1/10)
+16:56:10 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_CHI@BOS (2/10)
+16:56:13 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_DET@BKN (3/10)
+16:56:16 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_NY@PHI (4/10)
+16:56:19 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_ORL@TOR (5/10)
+16:56:22 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_HOU@DAL (6/10)
+16:56:26 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_IND@MIA (7/10)
+16:56:29 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_LAC@MIN (8/10)
+16:56:32 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_DEN@PHO (9/10)
+16:56:35 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_LAL@GS (10/10)
+16:56:38 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_CHA@WAS (1/10)
+16:56:41 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_CHI@BOS (2/10)
+16:56:44 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_DET@BKN (3/10)
+16:56:47 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_NY@PHI (4/10)
+16:56:50 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_ORL@TOR (5/10)
+16:56:53 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_HOU@DAL (6/10)
+16:56:56 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_IND@MIA (7/10)
+16:56:59 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_LAC@MIN (8/10)
+16:57:02 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_DEN@PHO (9/10)
+16:57:05 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_LAL@GS (10/10)
+16:57:08 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_CHA@WAS (1/10)
+16:57:11 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_CHI@BOS (2/10)
+16:57:14 INFO    nba_ticker.sinks.preview: Preview showing game 20261030_DET@BKN (3/10)
+16:57:16 INFO    nba_ticker.sinks.preview: Preview sink closed.
