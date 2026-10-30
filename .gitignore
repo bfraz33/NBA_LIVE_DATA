@@ -1,0 +1,14 @@
+# secrets - NEVER commit
+.env
+
+# python
+__pycache__/
+*.pyc
+env/
+.venv/
+
+# runtime output
+*.log
+output/
+.vscode/
+venue_debug.txt
