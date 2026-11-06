@@ -1,4 +1,10 @@
 # secrets - NEVER commit
+
+nba_ticker.log
+output/preview.png
+output/preview-sheet.png
+output/frames/
+
 .env
 
 # python
