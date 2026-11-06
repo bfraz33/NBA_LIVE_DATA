@@ -1,4 +1,4 @@
-# GameTimeProps – NBA LED Ticker
+# NBA LED Ticker
 
 A Python-powered NBA scoreboard ticker designed for LED displays. GameTimeProps retrieves NBA game data, processes live scoreboard information, and displays games in a rotating scoreboard format.
 
